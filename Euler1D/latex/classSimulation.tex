@@ -1,0 +1,84 @@
+\hypertarget{classSimulation}{}\section{Simulation Class Reference}
+\label{classSimulation}\index{Simulation@{Simulation}}
+
+
+Collaboration diagram for Simulation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classSimulation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSimulation_a895ff3188084f3b63238600cf9cd8659}\label{classSimulation_a895ff3188084f3b63238600cf9cd8659}} 
+{\bfseries Simulation} (const \hyperlink{classparameterReader}{parameter\+Reader} \&p)
+\item 
+\mbox{\Hypertarget{classSimulation_a2ee5c72ad5435c5defa6524e2aae45dd}\label{classSimulation_a2ee5c72ad5435c5defa6524e2aae45dd}} 
+void {\bfseries initial\+Data} (const \hyperlink{classparameterReader}{parameter\+Reader} \&p)
+\item 
+\mbox{\Hypertarget{classSimulation_a0892ba78c1bc7286488761b4fca76c52}\label{classSimulation_a0892ba78c1bc7286488761b4fca76c52}} 
+void {\bfseries evolve} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSimulation_a33c150f15bbe3345522eba79bd1e8f33}\label{classSimulation_a33c150f15bbe3345522eba79bd1e8f33}} 
+const double \hyperlink{classSimulation_a33c150f15bbe3345522eba79bd1e8f33}{fudge}
+\begin{DoxyCompactList}\small\item\em A small quantity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_a92fd8cd6f62935dd3915e6a1dd6eb4ac}\label{classSimulation_a92fd8cd6f62935dd3915e6a1dd6eb4ac}} 
+int \hyperlink{classSimulation_a92fd8cd6f62935dd3915e6a1dd6eb4ac}{n\+\_\+points\+\_\+x}
+\begin{DoxyCompactList}\small\item\em Number of points in the x direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_a67fda8e9da3b2bbc39545dfc4afa9873}\label{classSimulation_a67fda8e9da3b2bbc39545dfc4afa9873}} 
+double \hyperlink{classSimulation_a67fda8e9da3b2bbc39545dfc4afa9873}{x\+Min}
+\begin{DoxyCompactList}\small\item\em Minimum value of x coordinate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_a3c748d2b081bc1c979cc974f420e90ea}\label{classSimulation_a3c748d2b081bc1c979cc974f420e90ea}} 
+double \hyperlink{classSimulation_a3c748d2b081bc1c979cc974f420e90ea}{x\+Max}
+\begin{DoxyCompactList}\small\item\em Maximum value of x coordinate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_a6af2df81dac27c93eb75b29c92855049}\label{classSimulation_a6af2df81dac27c93eb75b29c92855049}} 
+double \hyperlink{classSimulation_a6af2df81dac27c93eb75b29c92855049}{C\+FL}
+\begin{DoxyCompactList}\small\item\em Courant-\/\+Friederich-\/\+Levy factor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_ae3af859b6e8d5fd02c9f4afaeff54e2a}\label{classSimulation_ae3af859b6e8d5fd02c9f4afaeff54e2a}} 
+double \hyperlink{classSimulation_ae3af859b6e8d5fd02c9f4afaeff54e2a}{final\+Time}
+\begin{DoxyCompactList}\small\item\em Final time, where simulation stops. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_a898090da97cdad9a7715bf2ec078bfa5}\label{classSimulation_a898090da97cdad9a7715bf2ec078bfa5}} 
+double \hyperlink{classSimulation_a898090da97cdad9a7715bf2ec078bfa5}{out\+Every\+Time}
+\begin{DoxyCompactList}\small\item\em How often in time we do output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_a838684076d88a5e923c35c513a1d676c}\label{classSimulation_a838684076d88a5e923c35c513a1d676c}} 
+double \hyperlink{classSimulation_a838684076d88a5e923c35c513a1d676c}{time}
+\begin{DoxyCompactList}\small\item\em The time coordinate (variable) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_a26f1d3168ba61738b6539537fa95fe3b}\label{classSimulation_a26f1d3168ba61738b6539537fa95fe3b}} 
+double \hyperlink{classSimulation_a26f1d3168ba61738b6539537fa95fe3b}{dx}
+\begin{DoxyCompactList}\small\item\em Separation between points in x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_af43e498bfc83c777db5f5ac4025ff923}\label{classSimulation_af43e498bfc83c777db5f5ac4025ff923}} 
+double \hyperlink{classSimulation_af43e498bfc83c777db5f5ac4025ff923}{dt}
+\begin{DoxyCompactList}\small\item\em Separation between points in time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_a2b9ba6896919e029f314cafdd0f496ac}\label{classSimulation_a2b9ba6896919e029f314cafdd0f496ac}} 
+int \hyperlink{classSimulation_a2b9ba6896919e029f314cafdd0f496ac}{out\+Every}
+\begin{DoxyCompactList}\small\item\em How many iterations we do output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_a592c3b6538cbd268fc31aa806cdddef5}\label{classSimulation_a592c3b6538cbd268fc31aa806cdddef5}} 
+int \hyperlink{classSimulation_a592c3b6538cbd268fc31aa806cdddef5}{I\+T\+M\+AX}
+\begin{DoxyCompactList}\small\item\em Maximum nunmber of iterations, when simulation stops. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_adb5a7b5d86b920135fb2bf2a0d9516e0}\label{classSimulation_adb5a7b5d86b920135fb2bf2a0d9516e0}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} \hyperlink{classSimulation_adb5a7b5d86b920135fb2bf2a0d9516e0}{x}
+\begin{DoxyCompactList}\small\item\em x coordinate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_a801473291b7cf8bf290192383db659e1}\label{classSimulation_a801473291b7cf8bf290192383db659e1}} 
+\hyperlink{classEuler1D}{Euler1D} $\ast$ \hyperlink{classSimulation_a801473291b7cf8bf290192383db659e1}{phys}
+\begin{DoxyCompactList}\small\item\em The physical system of equations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSimulation_aeee15f5e02978c9b1d3a363e3d6a3800}\label{classSimulation_aeee15f5e02978c9b1d3a363e3d6a3800}} 
+\hyperlink{classTimeIntegrator}{Time\+Integrator} \hyperlink{classSimulation_aeee15f5e02978c9b1d3a363e3d6a3800}{t\+Integ}
+\begin{DoxyCompactList}\small\item\em The time integration algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file simulation.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+simulation.\+cpp\end{DoxyCompactItemize}

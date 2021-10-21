@@ -1,0 +1,283 @@
+\hypertarget{classgridFunc1D}{}\section{grid\+Func1D Class Reference}
+\label{classgridFunc1D}\index{grid\+Func1D@{grid\+Func1D}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgridFunc1D_a014ccb9f69e514547d24998fd3f5523b}{grid\+Func1D} ()
+\begin{DoxyCompactList}\small\item\em Constructor with no arguments. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgridFunc1D_a3f83c015b602a1d4ea0a0b9bf00812bd}\label{classgridFunc1D_a3f83c015b602a1d4ea0a0b9bf00812bd}} 
+\hyperlink{classgridFunc1D_a3f83c015b602a1d4ea0a0b9bf00812bd}{grid\+Func1D} (int)
+\begin{DoxyCompactList}\small\item\em Initializes and creates space to hold n elements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgridFunc1D_a3e5e1b42909e666b2d996a2c7b20124d}\label{classgridFunc1D_a3e5e1b42909e666b2d996a2c7b20124d}} 
+\hyperlink{classgridFunc1D_a3e5e1b42909e666b2d996a2c7b20124d}{grid\+Func1D} (const \hyperlink{classgridFunc1D}{grid\+Func1D} \&)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classgridFunc1D_a0d33423ea192c516bfaf9c0cc77cd943}{create} (int)
+\begin{DoxyCompactList}\small\item\em Creates and resize the objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgridFunc1D_a4df1b6d0de38c1d13e2cfc473d77cb5d}\label{classgridFunc1D_a4df1b6d0de38c1d13e2cfc473d77cb5d}} 
+void {\bfseries erase} ()
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a4bea39799321d46142b978a8a17d800e}\label{classgridFunc1D_a4bea39799321d46142b978a8a17d800e}} 
+double \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (float) const
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a5c270cddc809aa94b3dfce3588b8aacd}\label{classgridFunc1D_a5c270cddc809aa94b3dfce3588b8aacd}} 
+double \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (float)
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a71aaccb7ea0b40b0360afdf398d07fa0}\label{classgridFunc1D_a71aaccb7ea0b40b0360afdf398d07fa0}} 
+int \hyperlink{classgridFunc1D_a71aaccb7ea0b40b0360afdf398d07fa0}{Npoints} () const
+\begin{DoxyCompactList}\small\item\em Get the number of points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgridFunc1D_a83347f8764f77eef88ef326ef71d96b3}\label{classgridFunc1D_a83347f8764f77eef88ef326ef71d96b3}} 
+void {\bfseries set\+Boundary\+Condition} (int)
+\item 
+\mbox{\Hypertarget{classgridFunc1D_aba748038bbce60927dd328ebe5f712ac}\label{classgridFunc1D_aba748038bbce60927dd328ebe5f712ac}} 
+void {\bfseries set\+Is\+Flux} (int)
+\item 
+void \hyperlink{classgridFunc1D_a5dc63c77c8be317834291dcd0d66079d}{output\+Gnuplot\+Fake} (ofstream \&, \hyperlink{classgridFunc1D}{grid\+Func1D} \&, const double)
+\begin{DoxyCompactList}\small\item\em Gnuplot style output (fake) \end{DoxyCompactList}\item 
+void \hyperlink{classgridFunc1D_aeb63f2e7e15429025c33aa24abf288ad}{output\+Gnuplot} (ofstream \&, \hyperlink{classgridFunc1D}{grid\+Func1D} \&, const double) const
+\begin{DoxyCompactList}\small\item\em Gnuplot style output. \end{DoxyCompactList}\item 
+void \hyperlink{classgridFunc1D_a07793d54b659a46c6a38c3fe0b70f6c2}{output\+By\+Line} (ofstream \&, const double t) const
+\begin{DoxyCompactList}\small\item\em Output all the values of the variable in a single line. \end{DoxyCompactList}\item 
+void \hyperlink{classgridFunc1D_a9843d7697659ce644eb46c127f9c57cb}{output\+By\+Column} (ofstream \&, \hyperlink{classgridFunc1D}{grid\+Func1D} \&, const double t) const
+\begin{DoxyCompactList}\small\item\em ygraph output style \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgridFunc1D_a121a7d446c2cfbfbbfc685ccc70c3e30}\label{classgridFunc1D_a121a7d446c2cfbfbbfc685ccc70c3e30}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries operator+} (const \hyperlink{classgridFunc1D}{grid\+Func1D} \&B) const
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a18dc29bb1beca6f09ab507ced3f5ff50}\label{classgridFunc1D_a18dc29bb1beca6f09ab507ced3f5ff50}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries operator-\/} (const \hyperlink{classgridFunc1D}{grid\+Func1D} \&B) const
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a6143c22e1c52a94b7618a9478e44b6c9}\label{classgridFunc1D_a6143c22e1c52a94b7618a9478e44b6c9}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries operator$\ast$} (const \hyperlink{classgridFunc1D}{grid\+Func1D} \&B) const
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a4415608c844ce3098e09df36c31ad6c5}\label{classgridFunc1D_a4415608c844ce3098e09df36c31ad6c5}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries operator$\ast$} (const double \&b) const
+\item 
+\mbox{\Hypertarget{classgridFunc1D_ae21f476b7a1c40a4fcf013e20efef31a}\label{classgridFunc1D_ae21f476b7a1c40a4fcf013e20efef31a}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries operator/} (const double \&b) const
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a3c852d13b415f5c167a50bca0ea14124}\label{classgridFunc1D_a3c852d13b415f5c167a50bca0ea14124}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries operator/} (const \hyperlink{classgridFunc1D}{grid\+Func1D} \&B) const
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a0bf1365b51d3f71b36877cd7ce7aaa6a}\label{classgridFunc1D_a0bf1365b51d3f71b36877cd7ce7aaa6a}} 
+const \hyperlink{classgridFunc1D}{grid\+Func1D} \& {\bfseries operator=} (const \hyperlink{classgridFunc1D}{grid\+Func1D} \&B)
+\item 
+\mbox{\Hypertarget{classgridFunc1D_ac9c3bd3b43873d9e0ba174e1010d5188}\label{classgridFunc1D_ac9c3bd3b43873d9e0ba174e1010d5188}} 
+const \hyperlink{classgridFunc1D}{grid\+Func1D} \& {\bfseries operator=} (const double b)
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a72cf64cc9788b269c3830a1a1c6a55f2}\label{classgridFunc1D_a72cf64cc9788b269c3830a1a1c6a55f2}} 
+const \hyperlink{classgridFunc1D}{grid\+Func1D} \& {\bfseries operator=} (const int b)
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a6eb98fafdb29757160e503415e49a0ca}\label{classgridFunc1D_a6eb98fafdb29757160e503415e49a0ca}} 
+void \hyperlink{classgridFunc1D_a6eb98fafdb29757160e503415e49a0ca}{ishuge} (double a)
+\begin{DoxyCompactList}\small\item\em Checks is a given value is greater than a. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a4ababbcbdca2a233cb673fc8b1997ad1}\label{classgridFunc1D_a4ababbcbdca2a233cb673fc8b1997ad1}} 
+int {\bfseries n\+\_\+points}
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a2d4e4f9d31f1ae7406354bfd4c5a9db5}\label{classgridFunc1D_a2d4e4f9d31f1ae7406354bfd4c5a9db5}} 
+double $\ast$ {\bfseries data}
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a4bd8aa8cca871f1183ae3f2cb735f909}\label{classgridFunc1D_a4bd8aa8cca871f1183ae3f2cb735f909}} 
+double $\ast$ {\bfseries datamid}
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a7ca7772f4f7efcbd9e686bf292779433}\label{classgridFunc1D_a7ca7772f4f7efcbd9e686bf292779433}} 
+int {\bfseries boundary\+Type}
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a8b4a9154c3cfa2756353bf62f1440821}\label{classgridFunc1D_a8b4a9154c3cfa2756353bf62f1440821}} 
+int {\bfseries is\+Flux}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a82f5077526c231d53777ffa8dc25babe}\label{classgridFunc1D_a82f5077526c231d53777ffa8dc25babe}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries operator-\/} (const double a, const \hyperlink{classgridFunc1D}{grid\+Func1D} \&B)
+\item 
+\mbox{\Hypertarget{classgridFunc1D_aca721beab66aeb7beaca902c6de6297d}\label{classgridFunc1D_aca721beab66aeb7beaca902c6de6297d}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries operator$\ast$} (const double \&a, const \hyperlink{classgridFunc1D}{grid\+Func1D} \&B)
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a14fa7624f830d55e478316b887fc1a22}\label{classgridFunc1D_a14fa7624f830d55e478316b887fc1a22}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries operator/} (const double a, const \hyperlink{classgridFunc1D}{grid\+Func1D} \&B)
+\item 
+\mbox{\Hypertarget{classgridFunc1D_a3a2a38cf32f17dc89c19094b1ae9795a}\label{classgridFunc1D_a3a2a38cf32f17dc89c19094b1ae9795a}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries sqrt} (const \hyperlink{classgridFunc1D}{grid\+Func1D} \&A)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file grid\+Func1\+D.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgridFunc1D_a014ccb9f69e514547d24998fd3f5523b}\label{classgridFunc1D_a014ccb9f69e514547d24998fd3f5523b}} 
+\index{grid\+Func1D@{grid\+Func1D}!grid\+Func1D@{grid\+Func1D}}
+\index{grid\+Func1D@{grid\+Func1D}!grid\+Func1D@{grid\+Func1D}}
+\subsubsection{\texorpdfstring{grid\+Func1\+D()}{gridFunc1D()}}
+{\footnotesize\ttfamily grid\+Func1\+D\+::grid\+Func1D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor with no arguments. 
+
+It initializes everything to zero 
+
+Definition at line 8 of file grid\+Func1\+D.\+cpp.
+
+
+\begin{DoxyCode}
+9 \{
+10   n\_points = 0;
+11   data = NULL;
+12   datamid = NULL;
+13   boundaryType = -1;
+14   isFlux = 0;
+15 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgridFunc1D_a0d33423ea192c516bfaf9c0cc77cd943}\label{classgridFunc1D_a0d33423ea192c516bfaf9c0cc77cd943}} 
+\index{grid\+Func1D@{grid\+Func1D}!create@{create}}
+\index{create@{create}!grid\+Func1D@{grid\+Func1D}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void grid\+Func1\+D\+::create (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Creates and resize the objects. 
+
+This function assigns space and also can resize an already existing object 
+
+Definition at line 55 of file grid\+Func1\+D.\+cpp.
+
+
+\begin{DoxyCode}
+56 \{
+57   erase();
+58 
+59   \textcolor{keywordflow}{if} ( n > 0 )\{
+60     n\_points = n;
+61     data = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[n];
+62     datamid = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[n+1];
+63 
+64     \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=0; i<n; i++ )   data[i] = 0.0;
+65     \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=0; i<n+1; i++ ) datamid[i] = 0.0;
+66   \}
+67   \textcolor{keywordflow}{else} \{
+68     cout << \textcolor{stringliteral}{"ERROR: the number of points must be positive."}<<endl;
+69     exit(1);
+70   \}
+71 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classgridFunc1D_a9843d7697659ce644eb46c127f9c57cb}\label{classgridFunc1D_a9843d7697659ce644eb46c127f9c57cb}} 
+\index{grid\+Func1D@{grid\+Func1D}!output\+By\+Column@{output\+By\+Column}}
+\index{output\+By\+Column@{output\+By\+Column}!grid\+Func1D@{grid\+Func1D}}
+\subsubsection{\texorpdfstring{output\+By\+Column()}{outputByColumn()}}
+{\footnotesize\ttfamily void grid\+Func1\+D\+::output\+By\+Column (\begin{DoxyParamCaption}\item[{ofstream \&}]{out,  }\item[{\hyperlink{classgridFunc1D}{grid\+Func1D} \&}]{x,  }\item[{const double}]{t }\end{DoxyParamCaption}) const}
+
+
+
+ygraph output style 
+
+ygraph output style consists in starting a block with the current time followed with the position and the value of the variable in one line 
+
+Definition at line 168 of file grid\+Func1\+D.\+cpp.
+
+
+\begin{DoxyCode}
+169 \{
+170   out << \textcolor{stringliteral}{"#time = "} << t << endl;
+171 
+172   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=1; i<=n\_points; i++ )
+173     out << x[i] << \textcolor{stringliteral}{"\(\backslash\)t"} << std::setprecision(15) << (*this)[i] << endl;
+174 
+175   out << endl;
+176 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classgridFunc1D_a07793d54b659a46c6a38c3fe0b70f6c2}\label{classgridFunc1D_a07793d54b659a46c6a38c3fe0b70f6c2}} 
+\index{grid\+Func1D@{grid\+Func1D}!output\+By\+Line@{output\+By\+Line}}
+\index{output\+By\+Line@{output\+By\+Line}!grid\+Func1D@{grid\+Func1D}}
+\subsubsection{\texorpdfstring{output\+By\+Line()}{outputByLine()}}
+{\footnotesize\ttfamily void grid\+Func1\+D\+::output\+By\+Line (\begin{DoxyParamCaption}\item[{ofstream \&}]{out,  }\item[{const double}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Output all the values of the variable in a single line. 
+
+Time is in the first column followed by all the pointwise values of the variable. The position is not output. This is useful the integrate the velocity to get the position of hypothetical particles. 
+
+Definition at line 152 of file grid\+Func1\+D.\+cpp.
+
+
+\begin{DoxyCode}
+153 \{
+154   out << t;
+155 
+156   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=1; i<=n\_points; i++ )
+157     out << \textcolor{stringliteral}{"\(\backslash\)t"} << (*\textcolor{keyword}{this})[i];
+158 
+159   out << endl;
+160 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classgridFunc1D_aeb63f2e7e15429025c33aa24abf288ad}\label{classgridFunc1D_aeb63f2e7e15429025c33aa24abf288ad}} 
+\index{grid\+Func1D@{grid\+Func1D}!output\+Gnuplot@{output\+Gnuplot}}
+\index{output\+Gnuplot@{output\+Gnuplot}!grid\+Func1D@{grid\+Func1D}}
+\subsubsection{\texorpdfstring{output\+Gnuplot()}{outputGnuplot()}}
+{\footnotesize\ttfamily void grid\+Func1\+D\+::output\+Gnuplot (\begin{DoxyParamCaption}\item[{ofstream \&}]{out,  }\item[{\hyperlink{classgridFunc1D}{grid\+Func1D} \&}]{x,  }\item[{const double}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Gnuplot style output. 
+
+First column is time, second column is spatial variable and third column is the field itself 
+
+Definition at line 134 of file grid\+Func1\+D.\+cpp.
+
+
+\begin{DoxyCode}
+135 \{
+136   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=1; i<=n\_points; i++ )
+137     out << t << \textcolor{stringliteral}{"\(\backslash\)t"} << x[i] << \textcolor{stringliteral}{"\(\backslash\)t"} << (*\textcolor{keyword}{this})[i] << endl;
+138 
+139   out << endl << endl;
+140 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classgridFunc1D_a5dc63c77c8be317834291dcd0d66079d}\label{classgridFunc1D_a5dc63c77c8be317834291dcd0d66079d}} 
+\index{grid\+Func1D@{grid\+Func1D}!output\+Gnuplot\+Fake@{output\+Gnuplot\+Fake}}
+\index{output\+Gnuplot\+Fake@{output\+Gnuplot\+Fake}!grid\+Func1D@{grid\+Func1D}}
+\subsubsection{\texorpdfstring{output\+Gnuplot\+Fake()}{outputGnuplotFake()}}
+{\footnotesize\ttfamily void grid\+Func1\+D\+::output\+Gnuplot\+Fake (\begin{DoxyParamCaption}\item[{ofstream \&}]{out,  }\item[{\hyperlink{classgridFunc1D}{grid\+Func1D} \&}]{x,  }\item[{const double}]{t }\end{DoxyParamCaption})}
+
+
+
+Gnuplot style output (fake) 
+
+This function is trick to make a 1D variable look like a 2D one. Its purpose is the make a density plot with Gnuplot 
+
+Definition at line 112 of file grid\+Func1\+D.\+cpp.
+
+
+\begin{DoxyCode}
+113 \{
+114   out << \textcolor{stringliteral}{"#time = "} << t << endl;
+115 
+116   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=1; i<=n\_points; i++ )
+117     out << 0.0 << \textcolor{stringliteral}{"\(\backslash\)t"} << x[i] << \textcolor{stringliteral}{"\(\backslash\)t"} << (*\textcolor{keyword}{this})[i] << endl;
+118 
+119   out << endl;
+120 
+121   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=1; i<=n\_points; i++ )
+122     out << 1.0 << \textcolor{stringliteral}{"\(\backslash\)t"} << x[i] << \textcolor{stringliteral}{"\(\backslash\)t"} << (*\textcolor{keyword}{this})[i] << endl;
+123 
+124   out << endl << endl;
+125 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+grid\+Func1\+D.\+hpp\item 
+grid\+Func1\+D.\+cpp\end{DoxyCompactItemize}

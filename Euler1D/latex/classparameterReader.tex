@@ -1,0 +1,109 @@
+\hypertarget{classparameterReader}{}\section{parameter\+Reader Class Reference}
+\label{classparameterReader}\index{parameter\+Reader@{parameter\+Reader}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classparameterReader_a179677148e67505aeba03b350b72d0d6}{parameter\+Reader} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{classparameterReader_ae5e3d2f04754357b25556f04cbe48b2e}{get\+Param} (std\+::string s) const
+\begin{DoxyCompactList}\small\item\em Returns the value of the parameter name given. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classparameterReader_a72a2ac1e23e699b2f393193193d9dda7}\label{classparameterReader_a72a2ac1e23e699b2f393193193d9dda7}} 
+int \hyperlink{classparameterReader_a72a2ac1e23e699b2f393193193d9dda7}{len}
+\begin{DoxyCompactList}\small\item\em the length of the parameter table \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparameterReader_ac5b129418d06946c39462c2bf26aea54}\label{classparameterReader_ac5b129418d06946c39462c2bf26aea54}} 
+std\+::string \hyperlink{classparameterReader_ac5b129418d06946c39462c2bf26aea54}{param\+Table} \mbox{[}1000\mbox{]}\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em a len by 2 matrix holding the parameter name and the parameter value \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file parameter\+Reader.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classparameterReader_a179677148e67505aeba03b350b72d0d6}\label{classparameterReader_a179677148e67505aeba03b350b72d0d6}} 
+\index{parameter\+Reader@{parameter\+Reader}!parameter\+Reader@{parameter\+Reader}}
+\index{parameter\+Reader@{parameter\+Reader}!parameter\+Reader@{parameter\+Reader}}
+\subsubsection{\texorpdfstring{parameter\+Reader()}{parameterReader()}}
+{\footnotesize\ttfamily parameter\+Reader\+::parameter\+Reader (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+In the constructor the Parameters file is read. The pairs \char`\"{}parameter name\char`\"{} and \char`\"{}parameter value\char`\"{} are stored in a matrix. 
+
+Definition at line 9 of file parameter\+Reader.\+cpp.
+
+
+\begin{DoxyCode}
+10 \{
+11   std::ifstream infile( fileName.c\_str() );
+12   std::string line, paramName, paramValue;
+13   std::size\_t pos;
+14   \textcolor{keywordtype}{int} c = 0;
+15 
+16   \textcolor{keywordflow}{while}( std::getline( infile, line ) )\{
+17     \textcolor{comment}{// get position of the = sign}
+18     pos = line.find( \textcolor{stringliteral}{"="} );
+19     \textcolor{comment}{// get the string before and after the = sign}
+20     paramName  = line.substr( 0, pos-1 );
+21     paramValue = line.substr( pos+1 );
+22     \textcolor{comment}{// remove space infront of parameter value}
+23     paramValue.erase(remove\_if(paramValue.begin(), paramValue.end(), isspace),paramValue.end());
+24     \textcolor{comment}{// assing to paramTable}
+25     \hyperlink{classparameterReader_ac5b129418d06946c39462c2bf26aea54}{paramTable}[c][0] = paramName;
+26     \hyperlink{classparameterReader_ac5b129418d06946c39462c2bf26aea54}{paramTable}[c][1] = paramValue;
+27 
+28     \textcolor{comment}{//cout << paramTable[c][0] << "qqq" << paramTable[c][1] << "q"<<endl;}
+29     c++;
+30   \}
+31 
+32   \hyperlink{classparameterReader_a72a2ac1e23e699b2f393193193d9dda7}{len} = c;
+33   infile.close();
+34 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classparameterReader_ae5e3d2f04754357b25556f04cbe48b2e}\label{classparameterReader_ae5e3d2f04754357b25556f04cbe48b2e}} 
+\index{parameter\+Reader@{parameter\+Reader}!get\+Param@{get\+Param}}
+\index{get\+Param@{get\+Param}!parameter\+Reader@{parameter\+Reader}}
+\subsubsection{\texorpdfstring{get\+Param()}{getParam()}}
+{\footnotesize\ttfamily const char $\ast$ parameter\+Reader\+::get\+Param (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value of the parameter name given. 
+
+The function takes the parameter name s and returns a the value as a const char$\ast$ If the value is numeric, it has to be converted to int or double. 
+
+Definition at line 41 of file parameter\+Reader.\+cpp.
+
+
+\begin{DoxyCode}
+42 \{
+43   \textcolor{keywordtype}{int} i=0;
+44 
+45   \textcolor{keywordflow}{while}( \hyperlink{classparameterReader_ac5b129418d06946c39462c2bf26aea54}{paramTable}[i][0] != s )\{
+46     i++;
+47     \textcolor{keywordflow}{if} ( i>\hyperlink{classparameterReader_a72a2ac1e23e699b2f393193193d9dda7}{len} )\{
+48       std::cerr << \textcolor{stringliteral}{"ERROR: Parameter "}<<s<<\textcolor{stringliteral}{" was not found in the parameter file"}<<endl;
+49       exit(1);
+50     \}
+51   \}
+52 
+53   \textcolor{keywordflow}{return} \hyperlink{classparameterReader_ac5b129418d06946c39462c2bf26aea54}{paramTable}[i][1].c\_str();
+54 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+parameter\+Reader.\+hpp\item 
+parameter\+Reader.\+cpp\end{DoxyCompactItemize}

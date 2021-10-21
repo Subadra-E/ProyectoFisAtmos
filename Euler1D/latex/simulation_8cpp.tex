@@ -1,0 +1,50 @@
+\hypertarget{simulation_8cpp}{\section{simulation.\-cpp File Reference}
+\label{simulation_8cpp}\index{simulation.\-cpp@{simulation.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}grid\-Func1\-D.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Euler1\-D.\-hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classSimulation}{Simulation}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{simulation_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{simulation_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{simulation.\-cpp@{simulation.\-cpp}!main@{main}}
+\index{main@{main}!simulation.cpp@{simulation.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{simulation_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Definition at line 89 of file simulation.\-cpp.
+
+
+\begin{DoxyCode}
+90 \{
+91   \textcolor{comment}{// create simulation}
+92   \hyperlink{classSimulation}{Simulation} sim( 100, \textcolor{comment}{// n points}
+93           0.0, \textcolor{comment}{// x minimum}
+94           1.0, \textcolor{comment}{// x maximim}
+95           0.1, \textcolor{comment}{// CFL factor}
+96           2.0,\textcolor{comment}{// final time}
+97           0.1  \textcolor{comment}{// ouput every interval }
+98           );
+99 
+100   \textcolor{comment}{// initial data}
+101   sim.initialData();
+102 
+103   \textcolor{comment}{// evolution}
+104   sim.evolve();
+105 
+106   \textcolor{keywordflow}{return} 0;
+107 \}
+\end{DoxyCode}

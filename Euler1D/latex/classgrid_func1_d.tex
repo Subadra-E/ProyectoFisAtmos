@@ -1,0 +1,92 @@
+\hypertarget{classgrid_func1_d}{\section{grid\-Func1\-D Class Reference}
+\label{classgrid_func1_d}\index{grid\-Func1\-D@{grid\-Func1\-D}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classgrid_func1_d_a3f83c015b602a1d4ea0a0b9bf00812bd}{{\bfseries grid\-Func1\-D} (int)}\label{classgrid_func1_d_a3f83c015b602a1d4ea0a0b9bf00812bd}
+
+\item 
+\hypertarget{classgrid_func1_d_a0d33423ea192c516bfaf9c0cc77cd943}{void {\bfseries create} (int)}\label{classgrid_func1_d_a0d33423ea192c516bfaf9c0cc77cd943}
+
+\item 
+\hypertarget{classgrid_func1_d_a4df1b6d0de38c1d13e2cfc473d77cb5d}{void {\bfseries erase} ()}\label{classgrid_func1_d_a4df1b6d0de38c1d13e2cfc473d77cb5d}
+
+\item 
+\hypertarget{classgrid_func1_d_a5c270cddc809aa94b3dfce3588b8aacd}{double \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (float)}\label{classgrid_func1_d_a5c270cddc809aa94b3dfce3588b8aacd}
+
+\item 
+\hypertarget{classgrid_func1_d_a2846a01ea511282d49f2492fea14be4f}{int {\bfseries Npoints} ()}\label{classgrid_func1_d_a2846a01ea511282d49f2492fea14be4f}
+
+\item 
+\hypertarget{classgrid_func1_d_a83347f8764f77eef88ef326ef71d96b3}{void {\bfseries set\-Boundary\-Condition} (int)}\label{classgrid_func1_d_a83347f8764f77eef88ef326ef71d96b3}
+
+\item 
+\hypertarget{classgrid_func1_d_aba748038bbce60927dd328ebe5f712ac}{void {\bfseries set\-Is\-Flux} (int)}\label{classgrid_func1_d_aba748038bbce60927dd328ebe5f712ac}
+
+\item 
+void \hyperlink{classgrid_func1_d_af85fb7fc7b08ac1bf828128cd91fa5e0}{output\-Gnuplot\-Fake} (ofstream \&, \hyperlink{classgrid_func1_d}{grid\-Func1\-D} \&, double)
+\item 
+void \hyperlink{classgrid_func1_d_a65df48626ce78e85aa57fdd3b2e4277f}{output\-By\-Line} (ofstream \&, double t)
+\item 
+void \hyperlink{classgrid_func1_d_ab519f135db99a96e8c34fcc0c2bab4e8}{output\-By\-Column} (ofstream \&, \hyperlink{classgrid_func1_d}{grid\-Func1\-D} \&, double t)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classgrid_func1_d_a4ababbcbdca2a233cb673fc8b1997ad1}{int {\bfseries n\-\_\-points}}\label{classgrid_func1_d_a4ababbcbdca2a233cb673fc8b1997ad1}
+
+\item 
+\hypertarget{classgrid_func1_d_a2d4e4f9d31f1ae7406354bfd4c5a9db5}{double $\ast$ {\bfseries data}}\label{classgrid_func1_d_a2d4e4f9d31f1ae7406354bfd4c5a9db5}
+
+\item 
+\hypertarget{classgrid_func1_d_a4bd8aa8cca871f1183ae3f2cb735f909}{double $\ast$ {\bfseries datamid}}\label{classgrid_func1_d_a4bd8aa8cca871f1183ae3f2cb735f909}
+
+\item 
+\hypertarget{classgrid_func1_d_a7ca7772f4f7efcbd9e686bf292779433}{int {\bfseries boundary\-Type}}\label{classgrid_func1_d_a7ca7772f4f7efcbd9e686bf292779433}
+
+\item 
+\hypertarget{classgrid_func1_d_a8b4a9154c3cfa2756353bf62f1440821}{int {\bfseries is\-Flux}}\label{classgrid_func1_d_a8b4a9154c3cfa2756353bf62f1440821}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgrid_func1_d_ab519f135db99a96e8c34fcc0c2bab4e8}{\index{grid\-Func1\-D@{grid\-Func1\-D}!output\-By\-Column@{output\-By\-Column}}
+\index{output\-By\-Column@{output\-By\-Column}!gridFunc1D@{grid\-Func1\-D}}
+\subsubsection[{output\-By\-Column}]{\setlength{\rightskip}{0pt plus 5cm}void grid\-Func1\-D\-::output\-By\-Column (
+\begin{DoxyParamCaption}
+\item[{ofstream \&}]{out, }
+\item[{{\bf grid\-Func1\-D} \&}]{x, }
+\item[{double}]{t}
+\end{DoxyParamCaption}
+)}}\label{classgrid_func1_d_ab519f135db99a96e8c34fcc0c2bab4e8}
+ygraph output style
+
+ygraph output style consists in starting a block with the current time followed with the position and the value of the variable in one line \hypertarget{classgrid_func1_d_a65df48626ce78e85aa57fdd3b2e4277f}{\index{grid\-Func1\-D@{grid\-Func1\-D}!output\-By\-Line@{output\-By\-Line}}
+\index{output\-By\-Line@{output\-By\-Line}!gridFunc1D@{grid\-Func1\-D}}
+\subsubsection[{output\-By\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void grid\-Func1\-D\-::output\-By\-Line (
+\begin{DoxyParamCaption}
+\item[{ofstream \&}]{out, }
+\item[{double}]{t}
+\end{DoxyParamCaption}
+)}}\label{classgrid_func1_d_a65df48626ce78e85aa57fdd3b2e4277f}
+Output all the values of the variable in a single line
+
+Time is in the first column followed by all the pointwise values of the variable. The position is not output. This is useful the integrate the velocity to get the position of hypothetical particles. \hypertarget{classgrid_func1_d_af85fb7fc7b08ac1bf828128cd91fa5e0}{\index{grid\-Func1\-D@{grid\-Func1\-D}!output\-Gnuplot\-Fake@{output\-Gnuplot\-Fake}}
+\index{output\-Gnuplot\-Fake@{output\-Gnuplot\-Fake}!gridFunc1D@{grid\-Func1\-D}}
+\subsubsection[{output\-Gnuplot\-Fake}]{\setlength{\rightskip}{0pt plus 5cm}void grid\-Func1\-D\-::output\-Gnuplot\-Fake (
+\begin{DoxyParamCaption}
+\item[{ofstream \&}]{out, }
+\item[{{\bf grid\-Func1\-D} \&}]{x, }
+\item[{double}]{t}
+\end{DoxyParamCaption}
+)}}\label{classgrid_func1_d_af85fb7fc7b08ac1bf828128cd91fa5e0}
+Gnuplot style output
+
+This function is trick to make a 1\-D variable look like a 2\-D one. Its purpose is the make a density plot with Gnuplot 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+grid\-Func1\-D.\-hpp\item 
+grid\-Func1\-D.\-cpp\end{DoxyCompactItemize}

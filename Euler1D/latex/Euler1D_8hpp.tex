@@ -1,0 +1,224 @@
+\hypertarget{Euler1D_8hpp}{\section{Euler1\-D.\-hpp File Reference}
+\label{Euler1D_8hpp}\index{Euler1\-D.\-hpp@{Euler1\-D.\-hpp}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classEuler1D}{Euler1\-D}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{Euler1D_8hpp_a2afeb957d1dd14c9dfb2f7b163ac4031}{energy\-\_\-\-P\-W} (double d, double v, double p)
+\item 
+double \hyperlink{Euler1D_8hpp_a41a6d6a42de540156c3921de807a76fb}{momentum\-\_\-\-P\-W} (double d, double v)
+\begin{DoxyCompactList}\small\item\em Momentum in terms of density and velocity. \end{DoxyCompactList}\item 
+void \hyperlink{Euler1D_8hpp_aee1e7dbff35eb42a1d4469ae2336ec91}{calc\-\_\-dq} (int i, int k, \hyperlink{classgridFunc1D}{grid\-Func1\-D} \&den, \hyperlink{classgridFunc1D}{grid\-Func1\-D} \&mom, \hyperlink{classgridFunc1D}{grid\-Func1\-D} \&ene, double $\ast$alpha, double $\ast$r\-\_\-m, double $\ast$r\-\_\-0, double $\ast$r\-\_\-p, double $\ast$lambda)
+\item 
+void \hyperlink{Euler1D_8hpp_a8895f661c6249aa0c40e74987e09b86b}{calc\-Net\-Flux} (int i, \hyperlink{classgridFunc1D}{grid\-Func1\-D} \&den, \hyperlink{classgridFunc1D}{grid\-Func1\-D} \&mom, \hyperlink{classgridFunc1D}{grid\-Func1\-D} \&ene, double $\ast$flux, double $\ast$lambda)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{Euler1D_8hpp_aee1e7dbff35eb42a1d4469ae2336ec91}{\index{Euler1\-D.\-hpp@{Euler1\-D.\-hpp}!calc\-\_\-dq@{calc\-\_\-dq}}
+\index{calc\-\_\-dq@{calc\-\_\-dq}!Euler1D.hpp@{Euler1\-D.\-hpp}}
+\subsubsection[{calc\-\_\-dq}]{\setlength{\rightskip}{0pt plus 5cm}void calc\-\_\-dq (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{k, }
+\item[{{\bf grid\-Func1\-D} \&}]{den, }
+\item[{{\bf grid\-Func1\-D} \&}]{mom, }
+\item[{{\bf grid\-Func1\-D} \&}]{ene, }
+\item[{double $\ast$}]{alpha, }
+\item[{double $\ast$}]{r\-\_\-m, }
+\item[{double $\ast$}]{r\-\_\-0, }
+\item[{double $\ast$}]{r\-\_\-p, }
+\item[{double $\ast$}]{lambda}
+\end{DoxyParamCaption}
+)}}\label{Euler1D_8hpp_aee1e7dbff35eb42a1d4469ae2336ec91}
+
+
+Definition at line 174 of file Euler1\-D.\-cpp.
+
+
+\begin{DoxyCode}
+175 \{
+176   \textcolor{keywordtype}{double} u, c, pL, pR, c2, u2, h, hL, hR, srhoL, srhoR, rho;
+177   \textcolor{keywordtype}{double} dq[3], v0[3], v1[3], v2[3];
+178   \textcolor{comment}{/*}
+179 \textcolor{comment}{  u  = mom[i]/den[i];}
+180 \textcolor{comment}{  u2 = u*u;}
+181 \textcolor{comment}{  p  = (gam-1.0)*(ene[i] - 0.5*den[i]*u2 );}
+182 \textcolor{comment}{  c2 = gam*p/den[i];}
+183 \textcolor{comment}{  c  = sqrt(c2);}
+184 \textcolor{comment}{  h = (ene[i] + p)/den[i];}
+185 \textcolor{comment}{  */}
+186   
+187   \textcolor{keyword}{using} \hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{Eu1D::gam};
+188 
+189   srhoL = sqrt(den[i-1]);
+190   srhoR = sqrt(den[i]);
+191   \textcolor{comment}{//rho = sqrt(den[i-1]*den[i]);}
+192 
+193   u  = (srhoL*mom[i-1]/den[i-1] + srhoR*mom[i]/den[i])/(srhoL + srhoR);
+194   u2 = u*u;
+195   pL = (\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1.0)*(ene[i-1] - 0.5*den[i-1]*pow(mom[i-1]/den[i-1],2) );
+196   pR = (\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1.0)*(ene[i  ] - 0.5*den[i  ]*pow(mom[i  ]/den[i  ],2) );
+197   hL = (ene[i-1] + pL ) / den[i-1];
+198   hR = (ene[i  ] + pR ) / den[i  ];
+199   h  = (srhoL*hL + srhoR*hR)/(srhoL + srhoR);
+200   c2 = (\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1.0)*(h - 0.5*u2 );
+201   c  = sqrt(c2);
+202 
+203 
+204   dq[0] = den[i] - den[i-1];
+205   dq[1] = mom[i] - mom[i-1];
+206   dq[2] = ene[i] - ene[i-1];
+207   
+208   v0[0] = 0.25*( 2*u/c +   u2/c2*(\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1) );
+209   v0[1] = 0.25*( 4     - 2*u2/c2*(\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1) );
+210   v0[2] = 0.25*(-2*u/c +   u2/c2*(\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1) );
+211 
+212   v1[0] = 0.25*(-2/c - 2*u/c2*(\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1) );
+213   v1[1] = 0.25*(       4*u/c2*(\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1) );
+214   v1[2] = 0.25*( 2/c - 2*u/c2*(\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1) );
+215   
+216   v2[0] = 0.25*( 2/c2*(\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1) );
+217   v2[1] = 0.25*(-4/c2*(\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1) );
+218   v2[2] = 0.25*( 2/c2*(\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{gam}-1) );
+219   
+220   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} j=0; j<3; j++ )
+221     alpha[j] = v0[j]*dq[0] + v1[j]*dq[1] + v2[j]*dq[2];
+222 
+223   r\_m[0] = 1;
+224   r\_m[1] = u - c;
+225   r\_m[2] = h - u*c;
+226 
+227   r\_0[0] = 1;
+228   r\_0[1] = u;
+229   r\_0[2] = 0.5*u2;
+230 
+231   r\_p[0] = 1;
+232   r\_p[1] = u + c;
+233   r\_p[2] = h + u*c;
+234 
+235   lambda[0] = u - c;
+236   lambda[1] = u;
+237   lambda[2] = u + c;
+238 \}
+\end{DoxyCode}
+\hypertarget{Euler1D_8hpp_a8895f661c6249aa0c40e74987e09b86b}{\index{Euler1\-D.\-hpp@{Euler1\-D.\-hpp}!calc\-Net\-Flux@{calc\-Net\-Flux}}
+\index{calc\-Net\-Flux@{calc\-Net\-Flux}!Euler1D.hpp@{Euler1\-D.\-hpp}}
+\subsubsection[{calc\-Net\-Flux}]{\setlength{\rightskip}{0pt plus 5cm}void calc\-Net\-Flux (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{{\bf grid\-Func1\-D} \&}]{den, }
+\item[{{\bf grid\-Func1\-D} \&}]{mom, }
+\item[{{\bf grid\-Func1\-D} \&}]{ene, }
+\item[{double $\ast$}]{flux, }
+\item[{double $\ast$}]{lambda}
+\end{DoxyParamCaption}
+)}}\label{Euler1D_8hpp_a8895f661c6249aa0c40e74987e09b86b}
+
+
+Definition at line 114 of file Euler1\-D.\-cpp.
+
+
+\begin{DoxyCode}
+115 \{
+116   \textcolor{keywordtype}{double} alpha[3], r\_m[3], r\_0[3], r\_p[3], lam\_p[3], lam\_m[3];
+117   \textcolor{keywordtype}{double} Aplus\_i\_Q\_im1[3], Aminus\_i\_Q\_i[3], Aplus\_ip1\_Q\_i[3], Aminus\_ip1\_Q\_ip1[3];
+118   \textcolor{keywordtype}{double} Aplus\_i[3], Aminus\_i[3], Aplus\_ip1[3], Aminus\_ip1[3];
+119 
+120   \hyperlink{Euler1D_8cpp_aee1e7dbff35eb42a1d4469ae2336ec91}{calc\_dq}( i, i-1, den, mom, ene, alpha, r\_m, r\_0, r\_p, lambda );
+121   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} j=0; j<3; j++ )\{
+122     lam\_p[j] = 0.0;
+123     lam\_m[j] = 0.0;
+124   \}
+125 
+126   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} j=0; j<3; j++ ) 
+127     lambda[j] > 0.0 ? lam\_p[j] = lambda[j] : lam\_m[j] = lambda[j];
+128 
+129   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} j=0; j<3; j++ )
+130     Aplus\_i[j] = 
+131       lam\_p[0]*alpha[0]*r\_m[j] + 
+132       lam\_p[1]*alpha[1]*r\_0[j] + 
+133       lam\_p[2]*alpha[2]*r\_p[j]; 
+134 
+135   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} j=0; j<3; j++ )
+136     Aminus\_i[j] = 
+137       lam\_m[0]*alpha[0]*r\_m[j] + 
+138       lam\_m[1]*alpha[1]*r\_0[j] + 
+139       lam\_m[2]*alpha[2]*r\_p[j];
+140 
+141 
+142 
+143   \hyperlink{Euler1D_8cpp_aee1e7dbff35eb42a1d4469ae2336ec91}{calc\_dq}( i+1, i, den, mom, ene, alpha, r\_m, r\_0, r\_p, lambda );
+144   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} j=0; j<3; j++ )\{
+145     lam\_p[j] = 0.0;
+146     lam\_m[j] = 0.0;
+147   \}
+148 
+149   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} j=0; j<3; j++ ) 
+150     lambda[j] > 0.0 ? lam\_p[j] = lambda[j] : lam\_m[j] = lambda[j];
+151 
+152 
+153   
+154   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} j=0; j<3; j++ )
+155     Aplus\_ip1[j] = 
+156       lam\_m[0]*alpha[0]*r\_m[j] + 
+157       lam\_m[1]*alpha[1]*r\_0[j] + 
+158       lam\_m[2]*alpha[2]*r\_p[j];
+159 
+160   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} j=0; j<3; j++ )
+161     Aminus\_ip1[j] = 
+162       lam\_m[0]*alpha[0]*r\_m[j] + 
+163       lam\_m[1]*alpha[1]*r\_0[j] + 
+164       lam\_m[2]*alpha[2]*r\_p[j];
+165 
+166 
+167   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} j=0; j<3; j++ )
+168     flux[j] = Aplus\_i[j] + Aminus\_ip1[j];
+169 \}
+\end{DoxyCode}
+\hypertarget{Euler1D_8hpp_a2afeb957d1dd14c9dfb2f7b163ac4031}{\index{Euler1\-D.\-hpp@{Euler1\-D.\-hpp}!energy\-\_\-\-P\-W@{energy\-\_\-\-P\-W}}
+\index{energy\-\_\-\-P\-W@{energy\-\_\-\-P\-W}!Euler1D.hpp@{Euler1\-D.\-hpp}}
+\subsubsection[{energy\-\_\-\-P\-W}]{\setlength{\rightskip}{0pt plus 5cm}double energy\-\_\-\-P\-W (
+\begin{DoxyParamCaption}
+\item[{double}]{d, }
+\item[{double}]{v, }
+\item[{double}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{Euler1D_8hpp_a2afeb957d1dd14c9dfb2f7b163ac4031}
+
+
+Definition at line 28 of file Euler1\-D.\-cpp.
+
+
+\begin{DoxyCode}
+29 \{
+30   \textcolor{keywordflow}{return} 0.5*d*v*v + p/(\hyperlink{namespaceEu1D_a11c0e40fc3c8e0bfa0fdddf6ff676661}{Eu1D::gam}-1);
+31 \}
+\end{DoxyCode}
+\hypertarget{Euler1D_8hpp_a41a6d6a42de540156c3921de807a76fb}{\index{Euler1\-D.\-hpp@{Euler1\-D.\-hpp}!momentum\-\_\-\-P\-W@{momentum\-\_\-\-P\-W}}
+\index{momentum\-\_\-\-P\-W@{momentum\-\_\-\-P\-W}!Euler1D.hpp@{Euler1\-D.\-hpp}}
+\subsubsection[{momentum\-\_\-\-P\-W}]{\setlength{\rightskip}{0pt plus 5cm}double momentum\-\_\-\-P\-W (
+\begin{DoxyParamCaption}
+\item[{double}]{d, }
+\item[{double}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{Euler1D_8hpp_a41a6d6a42de540156c3921de807a76fb}
+
+
+Momentum in terms of density and velocity. 
+
+
+
+Definition at line 23 of file Euler1\-D.\-cpp.
+
+
+\begin{DoxyCode}
+24 \{
+25   \textcolor{keywordflow}{return} d*v;
+26 \}
+\end{DoxyCode}

@@ -1,0 +1,128 @@
+\hypertarget{classEuler1D}{}\section{Euler1D Class Reference}
+\label{classEuler1D}\index{Euler1D@{Euler1D}}
+
+
+Collaboration diagram for Euler1D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{classEuler1D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEuler1D_ad84569261342179e02254ea816ee15c0}\label{classEuler1D_ad84569261342179e02254ea816ee15c0}} 
+\hyperlink{classEuler1D_ad84569261342179e02254ea816ee15c0}{Euler1D} (const \hyperlink{classparameterReader}{parameter\+Reader} \&p)
+\begin{DoxyCompactList}\small\item\em q is a \hyperlink{classmVector}{m\+Vector} that hold the variables q\mbox{[}0\mbox{]} is the density q\mbox{[}1\mbox{]} is velocity q\mbox{[}2\mbox{]} is pressure \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEuler1D_ad1612560c24dc0bb0aa54b2bc65bfade}\label{classEuler1D_ad1612560c24dc0bb0aa54b2bc65bfade}} 
+\hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ \& {\bfseries state\+Vector} ()
+\item 
+\mbox{\Hypertarget{classEuler1D_a939370b2721b7ac97053e4ea95ee5cb9}\label{classEuler1D_a939370b2721b7ac97053e4ea95ee5cb9}} 
+const \hyperlink{classgridFunc1D}{grid\+Func1D} \& {\bfseries density} () const
+\item 
+\mbox{\Hypertarget{classEuler1D_ae81f6e2348124ef702a9257ae512a750}\label{classEuler1D_ae81f6e2348124ef702a9257ae512a750}} 
+const \hyperlink{classgridFunc1D}{grid\+Func1D} \& {\bfseries vel} () const
+\item 
+\mbox{\Hypertarget{classEuler1D_a9046ccec8f4ecc822c260dfd3050ceb8}\label{classEuler1D_a9046ccec8f4ecc822c260dfd3050ceb8}} 
+const \hyperlink{classgridFunc1D}{grid\+Func1D} \& {\bfseries pres} () const
+\item 
+\mbox{\Hypertarget{classEuler1D_a146d711f6675812bfec8dbc791503753}\label{classEuler1D_a146d711f6675812bfec8dbc791503753}} 
+const \hyperlink{classgridFunc1D}{grid\+Func1D} \& {\bfseries momentum} ()
+\item 
+\mbox{\Hypertarget{classEuler1D_aa4d4e90fbf535fe877a87695d45555d4}\label{classEuler1D_aa4d4e90fbf535fe877a87695d45555d4}} 
+const \hyperlink{classgridFunc1D}{grid\+Func1D} \& {\bfseries energy} ()
+\item 
+\mbox{\Hypertarget{classEuler1D_aea503a1e62ad484ca74b04da1b4c9300}\label{classEuler1D_aea503a1e62ad484ca74b04da1b4c9300}} 
+void \hyperlink{classEuler1D_aea503a1e62ad484ca74b04da1b4c9300}{initial\+Data} (\hyperlink{classgridFunc1D}{grid\+Func1D} \&x, const \hyperlink{classparameterReader}{parameter\+Reader} \&p)
+\begin{DoxyCompactList}\small\item\em Four types of shock tubes as initial data. \end{DoxyCompactList}\item 
+\hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ \hyperlink{classEuler1D_a466e76f0be22e407e3b17072fb567fb4}{R\+HS} (const \hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ \&iq, double dx)
+\begin{DoxyCompactList}\small\item\em Evolve in time from t to t+dt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEuler1D_a994704a8f516533966aa368bc6b34682}\label{classEuler1D_a994704a8f516533966aa368bc6b34682}} 
+void {\bfseries output} (\hyperlink{classgridFunc1D}{grid\+Func1D} \&x, double t)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEuler1D_a4d7ee173fabfdf028c3658607edfb706}\label{classEuler1D_a4d7ee173fabfdf028c3658607edfb706}} 
+\hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ {\bfseries q}
+\item 
+\mbox{\Hypertarget{classEuler1D_a0119979b53cf0ddcd45dd1a409d14ee8}\label{classEuler1D_a0119979b53cf0ddcd45dd1a409d14ee8}} 
+\hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ {\bfseries Flux}
+\item 
+\mbox{\Hypertarget{classEuler1D_a8dd5ef79e3aafaf95e7cf60f122e18de}\label{classEuler1D_a8dd5ef79e3aafaf95e7cf60f122e18de}} 
+\hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ {\bfseries r\+\_\+m}
+\item 
+\mbox{\Hypertarget{classEuler1D_aca17997549fc42c1787bf1cf4c709484}\label{classEuler1D_aca17997549fc42c1787bf1cf4c709484}} 
+\hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ {\bfseries r\+\_\+0}
+\item 
+\mbox{\Hypertarget{classEuler1D_a86e407119b0789ab0dc475b9acd2097d}\label{classEuler1D_a86e407119b0789ab0dc475b9acd2097d}} 
+\hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ {\bfseries r\+\_\+p}
+\item 
+\mbox{\Hypertarget{classEuler1D_ad68269f3b44c914a5b51b5b6a3aa8910}\label{classEuler1D_ad68269f3b44c914a5b51b5b6a3aa8910}} 
+\hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ {\bfseries alpha}
+\item 
+\mbox{\Hypertarget{classEuler1D_ae7c0ed4ec766896cb5a20ebca877d08f}\label{classEuler1D_ae7c0ed4ec766896cb5a20ebca877d08f}} 
+\hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ {\bfseries lambda}
+\item 
+\mbox{\Hypertarget{classEuler1D_a7056e02d1f1c8e228441d39384e2638d}\label{classEuler1D_a7056e02d1f1c8e228441d39384e2638d}} 
+\hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ {\bfseries flux\+R\+HS}
+\item 
+\mbox{\Hypertarget{classEuler1D_ad3a4ed7f5c1279905f28e91bac38fd59}\label{classEuler1D_ad3a4ed7f5c1279905f28e91bac38fd59}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries moment}
+\item 
+\mbox{\Hypertarget{classEuler1D_a06ded8b55a4416e73e92cbbed4c74411}\label{classEuler1D_a06ded8b55a4416e73e92cbbed4c74411}} 
+\hyperlink{classgridFunc1D}{grid\+Func1D} {\bfseries energ}
+\item 
+\mbox{\Hypertarget{classEuler1D_af7770027091036a697ab97030e9bbe9e}\label{classEuler1D_af7770027091036a697ab97030e9bbe9e}} 
+int {\bfseries conv\+Factor}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Euler1\+D.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEuler1D_a466e76f0be22e407e3b17072fb567fb4}\label{classEuler1D_a466e76f0be22e407e3b17072fb567fb4}} 
+\index{Euler1D@{Euler1D}!R\+HS@{R\+HS}}
+\index{R\+HS@{R\+HS}!Euler1D@{Euler1D}}
+\subsubsection{\texorpdfstring{R\+H\+S()}{RHS()}}
+{\footnotesize\ttfamily \hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ Euler1\+D\+::\+R\+HS (\begin{DoxyParamCaption}\item[{const \hyperlink{classmVector}{m\+Vector}$<$ \hyperlink{classgridFunc1D}{grid\+Func1D} $>$ \&}]{iq,  }\item[{double}]{dx }\end{DoxyParamCaption})}
+
+
+
+Evolve in time from t to t+dt. 
+
+This is the most simple thing we can do. It is a first order method 
+
+Definition at line 170 of file Euler1\+D.\+cpp.
+
+
+\begin{DoxyCode}
+171 \{
+172   \textcolor{comment}{// iq stands for input q}
+173   \textcolor{keyword}{const} \textcolor{keywordtype}{int} N = iq[0].Npoints();
+174   
+175   calcFlux3( iq, alpha, r\_m, r\_0, r\_p, lambda, Flux );
+176   
+177   \textcolor{comment}{// compute net fluxes}
+178   \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=3; i<=N-2; i++ )\{
+179     fluxRHS[0][i] = -( Flux[0][i+1] - Flux[0][i] )/dx;
+180     fluxRHS[1][i] = -( Flux[1][i+1] - Flux[1][i] )/dx;
+181     fluxRHS[2][i] = -( Flux[2][i+1] - Flux[2][i] )/dx;
+182   \}
+183 
+184   \textcolor{keywordflow}{return} fluxRHS;
+185 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Euler1\+D.\+hpp\item 
+Euler1\+D.\+cpp\end{DoxyCompactItemize}
